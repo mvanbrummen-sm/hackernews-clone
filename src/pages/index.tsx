@@ -1,6 +1,6 @@
 import {Inter} from 'next/font/google'
 import React from "react";
-import Stories from "../../components/home/stories";
+import Stories from "../../components/Stories";
 
 const inter = Inter({subsets: ['latin']})
 
