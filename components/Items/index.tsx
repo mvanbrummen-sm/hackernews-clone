@@ -49,7 +49,7 @@ const convertUnixTimeToSince = (unixTime: number) => {
 
 const Item = ({item, index}: Props) => (
     <div className={styles.item}>
-        <span>{index}. </span>
+        <span>{++index}. </span>
         <Link href={item.url}>{item.title}</Link>
         <div>
             {item.score} points by {item.by} {convertUnixTimeToSince(item.time)} ago
