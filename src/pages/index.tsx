@@ -28,7 +28,7 @@ export async function getServerSideProps() {
     const res = await fetch(process.env.API_URL + '/topstories.json')
     const data = await res.json()
 
-    const promises = data.slice(0, 10).map(async (id: number) => {
+    const promises = data.slice(0, 30).map(async (id: number) => {
         const res = await fetch(process.env.API_URL + `/item/${id}.json`)
         return res.json()
     })

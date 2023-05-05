@@ -14,7 +14,7 @@ interface Props {
 
 const Stories = ({itemList}: Props) => (
     <div>
-        {itemList.map(item => <Item item={item}/>)}
+        {itemList.map((item, idx) => <Item item={item} index={idx}/>)}
     </div>
 );
 

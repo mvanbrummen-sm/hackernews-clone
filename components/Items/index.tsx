@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import styles from './item.module.scss';
 
 interface Props {
     item: {
@@ -9,7 +10,8 @@ interface Props {
         by: string,
         score: number,
         time: number
-    }
+    },
+    index: number
 }
 
 const convertUnixTime = (unixTime: number) => {
@@ -45,8 +47,9 @@ const convertUnixTimeToSince = (unixTime: number) => {
 }
 
 
-const Item = ({item}: Props) => (
-    <div>
+const Item = ({item, index}: Props) => (
+    <div className={styles.item}>
+        <span>{index}. </span>
         <Link href={item.url}>{item.title}</Link>
         <div>
             {item.score} points by {item.by} {convertUnixTimeToSince(item.time)} ago
