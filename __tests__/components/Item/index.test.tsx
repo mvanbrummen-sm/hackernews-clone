@@ -1,5 +1,5 @@
 import {render, screen} from '@testing-library/react'
-import Item from "../../../components/Items";
+import Item from "../../../components/Item";
 import timekeeper from "timekeeper";
 
 describe('Items', () => {
