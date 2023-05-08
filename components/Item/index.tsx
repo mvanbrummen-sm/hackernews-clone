@@ -17,9 +17,9 @@ interface Props {
 
 const Item = ({item, index}: Props) => (
     <div className={styles.item}>
-        <span>{++index}. </span>
-        <Link href={item.url}>{item.title}</Link>
-        <div>
+        <span className={styles.title}>{++index}. </span>
+        <Link href={item.url} className={styles.title}>{item.title}</Link>
+        <div className={styles.sublist}>
             {item.score} points by {item.by} {convertUnixTimeToSince(item.time)} ago
         </div>
     </div>
