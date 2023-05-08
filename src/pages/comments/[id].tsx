@@ -3,12 +3,13 @@ import {useRouter} from "next/router";
 import Item from "../../../components/Item";
 import {Item as ItemType} from "../../../lib/types/item";
 import {NextPageContext} from "next/dist/shared/lib/utils";
-import {Comments} from "../../../lib/types/comments";
+import {Comments as CommentsType} from "../../../lib/types/comments";
 import _ from "lodash";
+import Comments from "../../../components/Comments";
 
 interface Props {
     item: ItemType,
-    comments: Comments[]
+    comments: CommentsType[]
 }
 
 export default function Home(props: Props) {
@@ -17,7 +18,7 @@ export default function Home(props: Props) {
     return (
         <>
             <Item item={props.item}></Item>
-
+            <Comments item={props.item} comments={props.comments}></Comments>
         </>
     )
 }

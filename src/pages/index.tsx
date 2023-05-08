@@ -2,6 +2,7 @@ import {Inter} from 'next/font/google'
 import React from "react";
 import Stories from "../../components/Stories";
 import {Item} from "../../lib/types/item";
+import _ from "lodash";
 
 const inter = Inter({subsets: ['latin']})
 
@@ -32,7 +33,7 @@ export async function getServerSideProps() {
             return {
                 id: item.id,
                 title: item.title,
-                url: item.url,
+                url: _.isUndefined(item.url) ? null : item.url,
                 by: item.by,
                 score: item.score,
                 time: item.time,
