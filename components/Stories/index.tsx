@@ -1,15 +1,9 @@
 import React from "react";
 import Item from "../Item";
+import {Item as ItemType} from "../../lib/types/item";
 
 interface Props {
-    itemList: [{
-        id: number,
-        title: string,
-        url: string,
-        by: string,
-        score: number,
-        time: number
-    }]
+    itemList: ItemType[]
 }
 
 const Stories = ({itemList}: Props) => (

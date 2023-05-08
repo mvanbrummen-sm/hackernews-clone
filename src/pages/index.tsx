@@ -1,18 +1,12 @@
 import {Inter} from 'next/font/google'
 import React from "react";
 import Stories from "../../components/Stories";
+import {Item} from "../../lib/types/item";
 
 const inter = Inter({subsets: ['latin']})
 
 interface Props {
-    data: [{
-        id: number,
-        title: string,
-        url: string,
-        by: string,
-        score: number,
-        time: number
-    }]
+    data: Item[]
 }
 
 export default function Home({data}: Props) {
