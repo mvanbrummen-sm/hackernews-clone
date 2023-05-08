@@ -27,7 +27,7 @@ const Comment = ({comment, depth = 1}: { comment: Comments, depth: number }) => 
                 onClick={() => setCollapsed(!collapsed)}>[{collapsed ? comment.children.length + ' more' : '-'}]</a>
             </div>
             <div hidden={collapsed}>
-                <div>{comment.item.text}</div>
+                <div dangerouslySetInnerHTML={{__html: comment.item.text}}></div>
                 <div>
                     {comment.children && !_.isEmpty(comment.children) &&
                         comment.children.map((childComments, idx) => <Comment key={idx} comment={childComments}
