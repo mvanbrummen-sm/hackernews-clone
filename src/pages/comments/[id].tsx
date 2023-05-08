@@ -7,6 +7,7 @@ import _ from "lodash";
 import Comments from "../../../components/Comments";
 import Navbar from "../../../components/Navbar";
 import {Inter} from "next/font/google";
+import {getItem} from "../../../lib/client/hackernews";
 
 const inter = Inter({subsets: ['latin']})
 
@@ -27,8 +28,8 @@ export default function CommentsPage(props: Props) {
 
 export async function getServerSideProps(context: NextPageContext) {
     const {id} = context.query
-    const res = await fetch(process.env.API_URL + `/item/${id}.json`)
-    const item = await res.json()
+
+    const item = await getItem(id as string)
 
     return {
         props: {
@@ -47,10 +48,7 @@ export async function getServerSideProps(context: NextPageContext) {
 }
 
 async function getComments(kids: number[]): Promise<Comments[]> {
-    const promises = kids.map(async (id: number) => {
-        const res = await fetch(process.env.API_URL + `/item/${id}.json`)
-        return res.json()
-    })
+    const promises = kids.map(getItem)
     const result = await Promise.all(promises)
 
     return Promise.all(result

@@ -6,7 +6,7 @@ describe('Items', () => {
     it('renders a Item', () => {
         timekeeper.freeze(new Date(2023, 2, 1, 0, 0, 0, 0));
 
-        render(<Item index={0} item={
+        render(<Item index={0} page={0} item={
             {
                 id: 1,
                 title: 'An example web page',
