@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import styles from './item.module.scss';
-import {convertUnixTimeToSince} from "../../lib/dateUtil";
-import {getDomain} from "../../lib/urlUtil";
+import {convertUnixTimeToSince} from "../../lib/utils/dateUtil";
+import {getDomain} from "../../lib/utils/urlUtil";
 
 interface Props {
     item: {

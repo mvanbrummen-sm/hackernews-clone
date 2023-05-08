@@ -1,4 +1,4 @@
-import {getDomain} from "../../lib/urlUtil";
+import {getDomain} from "../../lib/utils/urlUtil";
 
 describe('urlUtil', () => {
     describe('getDomain', () => {

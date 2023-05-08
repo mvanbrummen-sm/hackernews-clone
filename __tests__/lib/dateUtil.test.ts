@@ -1,4 +1,4 @@
-import {convertUnixTimeToSince} from "../../lib/dateUtil";
+import {convertUnixTimeToSince} from "../../lib/utils/dateUtil";
 import timekeeper from "timekeeper";
 
 describe('dateUtil', () => {
