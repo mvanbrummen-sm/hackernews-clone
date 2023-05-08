@@ -13,13 +13,14 @@ describe('Items', () => {
                 url: 'https://example.com',
                 by: 'mvanbrummen',
                 score: 69,
-                time: 1656681497
+                time: 1656681497,
+                descendants: 1
             }
         }/>)
 
         expect(screen.getByText('1.')).toBeInTheDocument()
         expect(screen.getByText('An example web page')).toBeInTheDocument()
-        expect(screen.getByText('69 points by mvanbrummen 8 months ago')).toBeInTheDocument()
+        expect(screen.getByText('69 points by mvanbrummen 8 months ago |')).toBeInTheDocument()
         expect(screen.getByText('An example web page')).toHaveAttribute('href', 'https://example.com')
     })
 })

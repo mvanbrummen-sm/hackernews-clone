@@ -5,9 +5,7 @@ describe('Home', () => {
     it('renders a heading', () => {
         render(<Home data={[]} />)
 
-        const heading = screen.getByRole('heading', {
-            name: "hackernews",
-        })
+        const heading = screen.getByText('Hacker News')
 
         expect(heading).toBeInTheDocument()
     })
