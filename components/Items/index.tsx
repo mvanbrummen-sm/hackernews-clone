@@ -46,7 +46,6 @@ const convertUnixTimeToSince = (unixTime: number) => {
     return Math.floor(seconds) + " seconds";
 }
 
-
 const Item = ({item, index}: Props) => (
     <div className={styles.item}>
         <span>{++index}. </span>
