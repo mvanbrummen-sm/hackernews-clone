@@ -4,5 +4,6 @@ export interface Item {
     url: string,
     by: string,
     score: number,
-    time: number
+    time: number,
+    descendants: number,
 }

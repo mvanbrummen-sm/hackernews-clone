@@ -35,7 +35,8 @@ export async function getServerSideProps() {
                 url: item.url,
                 by: item.by,
                 score: item.score,
-                time: item.time
+                time: item.time,
+                descendants: item.descendants
             }
         }
     )
