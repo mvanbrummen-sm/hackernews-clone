@@ -3,6 +3,7 @@ import React from "react";
 import Stories from "../../components/Stories";
 import {Item} from "../../lib/types/item";
 import _ from "lodash";
+import Navbar from "../../components/Navbar";
 
 const inter = Inter({subsets: ['latin']})
 
@@ -13,7 +14,7 @@ interface Props {
 export default function Home({data}: Props) {
     return (
         <main className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}>
-            <h1>hackernews</h1>
+            <Navbar/>
             <Stories itemList={data}/>
         </main>
     )

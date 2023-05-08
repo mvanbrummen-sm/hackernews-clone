@@ -1,25 +1,27 @@
 import React from "react";
-import {useRouter} from "next/router";
 import Item from "../../../components/Item";
 import {Item as ItemType} from "../../../lib/types/item";
 import {NextPageContext} from "next/dist/shared/lib/utils";
 import {Comments as CommentsType} from "../../../lib/types/comments";
 import _ from "lodash";
 import Comments from "../../../components/Comments";
+import Navbar from "../../../components/Navbar";
+import {Inter} from "next/font/google";
+
+const inter = Inter({subsets: ['latin']})
 
 interface Props {
     item: ItemType,
     comments: CommentsType[]
 }
 
-export default function Home(props: Props) {
-    const router = useRouter()
-    const {id} = router.query
+export default function CommentsPage(props: Props) {
     return (
-        <>
+        <main className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}>
+            <Navbar/>
             <Item item={props.item}></Item>
             <Comments item={props.item} comments={props.comments}></Comments>
-        </>
+        </main>
     )
 }
 
